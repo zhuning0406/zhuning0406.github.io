@@ -66,7 +66,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Python/">Python</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/">Web 框架</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/Flask/">Flask</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-12T13:55:29.000Z">2024-05-12</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-12T15:25:41.528Z">2024-05-12</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-12T13:55:29.000Z">2024-05-12</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-12T15:35:11.351Z">2024-05-12</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -177,8 +177,27 @@
 
 <h2 id="Flask-参数的加载"><a href="#Flask-参数的加载" class="headerlink" title="Flask 参数的加载"></a>Flask 参数的加载</h2><p>以 DEBUG 模式为例，来看看设置 Flask 参数的几种方式：</p>
 <ul>
-<li><p>运行时传递参数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.run(debug = True)</span><br></pre></td></tr></table></figure></li>
+<li><p>第1种、运行时传递参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.run(debug = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第2种、通过设置 app 的属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第3种、修改配置参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.config.update(DEBUG=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># app.config[&#x27;DEBUG&#x27;] = True</span></span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第4种、通过 mapping 加载</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.config.from_mapping(&#123;<span class="string">&#x27;DEBUG&#x27;</span>:<span class="literal">True</span>&#125;)</span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第5种、通过配置对象设置config</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Config</span>:</span><br><span class="line">	DEBUG = <span class="literal">True</span></span><br><span class="line">app.config.from_object(config)</span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第6种、将配置写在独立文件中</p>
+<figure class="highlight plaintext"><figcaption><span>config.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEBUG = True</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>config.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;DEBUG&quot;:&quot;True&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><figcaption><span>app.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">app.config.from_pyfile(&#x27;config.py&#x27;)</span><br><span class="line">app.config.from_json</span><br><span class="line"></span><br><span class="line">(&#x27;config.json&#x27;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
 
