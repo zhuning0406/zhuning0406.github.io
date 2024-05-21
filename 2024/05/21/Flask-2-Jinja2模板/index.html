@@ -66,7 +66,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Python/">Python</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/">Web 框架</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/Flask/">Flask</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-20T16:19:48.000Z">2024-05-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-20T16:34:44.872Z">2024-05-21</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-20T16:19:48.000Z">2024-05-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-21T15:49:16.016Z">2024-05-21</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -82,6 +82,15 @@
 
 <p>但这显然不是好的办法，因此需要模板。</p>
 <h3 id="模板的简单使用"><a href="#模板的简单使用" class="headerlink" title="模板的简单使用"></a>模板的简单使用</h3><p>Flask 种使用的是 Jinja2 模板。</p>
+<p>使用模板的步骤：</p>
+<ol>
+<li><p>创建名为 templates 的文件夹；</p>
+</li>
+<li><p>在该文件夹中创建名为 index.html 的文件；</p>
+</li>
+<li><p>编写如下代码，使用模板：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;index19.html&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
 
 
 </article>
