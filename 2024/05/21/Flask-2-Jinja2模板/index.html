@@ -53,7 +53,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/12/Flask-1-%E8%A7%86%E5%9B%BE%E5%9F%BA%E7%A1%80%E5%8F%8AURL/"><span class="title">Flask(1)-视图基础及URL</span></a><a class="item title" href="/2024/05/21/Flask-2-Jinja2%E6%A8%A1%E6%9D%BF/"><span class="title">Flask-2-Jinja2模板</span></a><a class="item title" href="/2024/05/10/CSS-1-%E5%88%9D%E8%AF%86%E5%92%8C%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8/"><span class="title">CSS(1) - 初识和基本选择器</span></a><a class="item title" href="/2024/05/09/hexo-test/"><span class="title">hexo-test</span></a><a class="item title" href="/2024/05/09/HTML-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/"><span class="title">HTML 基础知识</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/21/Flask-2-Jinja2%E6%A8%A1%E6%9D%BF/"><span class="title">Flask-2-Jinja2模板</span></a><a class="item title" href="/2024/05/12/Flask-1-%E8%A7%86%E5%9B%BE%E5%9F%BA%E7%A1%80%E5%8F%8AURL/"><span class="title">Flask(1)-视图基础及URL</span></a><a class="item title" href="/2024/05/10/CSS-1-%E5%88%9D%E8%AF%86%E5%92%8C%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8/"><span class="title">CSS(1) - 初识和基本选择器</span></a><a class="item title" href="/2024/05/09/hexo-test/"><span class="title">hexo-test</span></a><a class="item title" href="/2024/05/09/HTML-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/"><span class="title">HTML 基础知识</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -66,7 +66,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Python/">Python</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/">Web 框架</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/Python/Web-%E6%A1%86%E6%9E%B6/Flask/">Flask</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-20T16:19:48.000Z">2024-05-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-21T15:56:36.638Z">2024-05-21</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-20T16:19:48.000Z">2024-05-21</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-21T16:23:15.373Z">2024-05-22</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -86,7 +86,10 @@
 <ol>
 <li><p>创建名为 templates 的文件夹；</p>
 </li>
-<li><p>在该文件夹中创建名为 index.html 的文件；</p>
+<li><p>在该文件夹中创建名为 index.html 的文件，在其中编写如下内容；</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>模板的使用<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, 模板的使用<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>这个是模板的使用案例！！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 <li><p>编写如下代码，使用模板：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="comment"># 模板默认的文件夹是 template</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;index19.html&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
